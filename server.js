@@ -70,7 +70,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/:articlename', function (req, res) {
-    res.send(createtemplate(articles[articlname]));
+    res.send(createtemplate(articles[articlename]));
 });
 
 
