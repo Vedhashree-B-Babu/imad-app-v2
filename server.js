@@ -59,6 +59,11 @@ var htmltemplate =`
 </html>`;
 return htmltemplate;
 }
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -68,16 +73,7 @@ app.get('/:articlename', function (req, res) {
     res.send(createtemplate(articles[articlname]));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createtemplate(article_one));
-});
-app.get('/article-two', function (req, res) {
-  res.send(createtemplate(article_two));
-});
 
- app.get('/article-three', function (req, res) {
-  res.send(createtemplate(article_three));
- });
  
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
