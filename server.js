@@ -28,11 +28,11 @@ var articles = {
     content: `<p> 
         'this is article-two'
     </p>`},
-    'article-three': {title: "article-one veda",
-    heading: 'article-one',
+    'article-three': {title: "article-three veda",
+    heading: 'article-three',
     date: 'mar 4, 2017',
     content: `<p> 
-        'this is article-one'
+        'this is article-three'
     </p>`}
 };
 
