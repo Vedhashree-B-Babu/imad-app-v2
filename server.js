@@ -7,7 +7,7 @@ var config = {
     database: 'vedhashree-b-babu',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: 'db-vedhashree-b-babu-8354'
+    password: process.env.DB_PASSWORD
 
 };
 
