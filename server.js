@@ -72,7 +72,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var pool = new pg.Pool(config);
+var pool = new pg.pool(config);
 
 
 app.get('/test-db', function (req, res) {
