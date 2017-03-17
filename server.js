@@ -58,7 +58,7 @@ var htmltemplate =`
            ${heading}
         </h1>
         <div>
-           ${date.toDateString}
+           ${date.toDateString()}
         </div>
         <div>
             <p>
@@ -92,7 +92,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/articles/:articlename', function (req, res){
-        pool.query("SELECT * FROM articles where title = '"+ req.params.articlename +"'",function(err,result){
+        pool.query("SELECT * FROM articles where title = $1",[ req.params.articlename ],function(err,result){
         if (err) {
             res.status(500).send(err.toString());
         }else{
