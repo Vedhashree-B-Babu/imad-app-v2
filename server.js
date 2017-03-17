@@ -15,26 +15,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-    'article-one': {title: "article-one veda",
-    heading: 'article-one',
-    date: 'mar 4, 2017',
-    content: `<p> 
-        'this is article-one'
-    </p>`},
-    'article-two': {title: "article-two veda",
-    heading: 'article-two',
-    date: 'mar 4, 2017',
-    content: `<p> 
-        'this is article-two'
-    </p>`},
-    'article-three': {title: "article-three veda",
-    heading: 'article-three',
-    date: 'mar 4, 2017',
-    content: `<p> 
-        'this is article-three'
-    </p>`}
-};
 
 function createtemplate(data) {
 var title =data.title;
@@ -58,7 +38,7 @@ var htmltemplate =`
            ${heading}
         </h1>
         <div>
-           ${date}
+           ${date}.toDateString()
         </div>
         <div>
             <p>
