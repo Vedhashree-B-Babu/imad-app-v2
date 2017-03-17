@@ -33,12 +33,12 @@ var htmltemplate =`
         <div>
             <a href="/">home</a>
         </div>
-        <hr/>
+        <hr/
         <h1>
            ${heading}
         </h1>
         <div>
-           ${date.toDateString()
+           ${$date.toDateString()
            }
         </div>
         <div>
