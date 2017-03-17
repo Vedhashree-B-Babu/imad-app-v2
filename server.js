@@ -38,7 +38,8 @@ var htmltemplate =`
            ${heading}
         </h1>
         <div>
-           ${date}.toDateString()
+           ${date.toDateString()
+           }
         </div>
         <div>
             <p>
