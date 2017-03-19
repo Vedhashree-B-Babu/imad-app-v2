@@ -60,9 +60,9 @@ app.get('/', function (req, res) {
 var counter = 0;
 app.get('/counter',function(req,res){
     counter = counter + 1;
-    res.send(counter.toString());
+    res.send(counter.toString()); 
 });
-function hash(input){
+function hash(input, salt){
     var hashed = crypto.pbkdf2Sync(input,salt,1000,512,'sha512');
     return hashed.toString('hex');
 }
@@ -70,7 +70,7 @@ function hash(input){
 
 
 app.get('/hash/:input', function(req,res){
-    var hashedString = hash(req.params.input);
+    var hashedString = hash(req.params.input, 'this is something');
     res.send(hashedstring);
 });
 
