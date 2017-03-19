@@ -66,13 +66,28 @@ function hash(input, salt){
     var hashed = crypto.pbkdf2Sync(input,salt,1000,512,'sha512');
     return ["pbkdf2",'1000',salt,hashed.toString('hex')];
 }
-
+ 
 
 
 app.get('/hash/:input', function(req,res){
     var hashedstring = hash(req.params.input, 'this is something');
     res.send(hashedstring);
 });
+
+app.get('/create-user',function(req,res){
+    var salt = crypto.RandomBytes(128).toString('hex');
+    var dbstring= hash(password,salt);
+    pool.query('insert into "user" (username,password) values ($1,$2)', [username,dbstring],function (err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send("user successfully created" + username);
+        }
+        
+    });
+});
+
+
 
 var pool = new Pool(config);
 
