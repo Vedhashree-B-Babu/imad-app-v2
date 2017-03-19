@@ -1,10 +1,10 @@
 
 var rut = document.getElementById('counter');
-var counter = 0;
+var counte = 0;
 
 rut.onclick = function(){
-    counter = counter + 1;
+    counter = counte + 1;
     var hi = document.getElementById('count');
-    hi.innerHTML= counter.toString();
+    hi.innerHTML= counte.toString();
     
 };
