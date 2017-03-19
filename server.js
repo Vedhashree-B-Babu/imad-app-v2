@@ -59,6 +59,10 @@ app.get('/counter',function(req,res){
     counter = counter + 1;
     res.send(counter.toString());
 });
+app.get('/hash/:input', function(req,res){
+    var hashedString = hash(req.params.input);
+    res.send(hashedstring);
+});
 
 var pool = new Pool(config);
 
